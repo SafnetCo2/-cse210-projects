@@ -6,9 +6,10 @@ class Program
     static void Main()
     {
         DisplayWelcome();
+        Console.WriteLine();
         string userName = PromptUserName();
         Console.WriteLine($"Hello,{userName}!");
-
+        Console.WriteLine();
         int favoriteNumber = PromptUserNumber();
         Console.WriteLine($"my favorite number is {favoriteNumber}");
 
@@ -16,10 +17,8 @@ class Program
         DisplayResult(userName, squaredNumber);
     }
 //function to display Welcome
-static void DisplayWelcome()
-    {
-        Console.WriteLine("Hello Welcome to the Program");
-    }
+
+
     //prompt username functions
     static string PromptUserName()
     {
@@ -37,6 +36,10 @@ static void DisplayWelcome()
 
             
         }
+    static void DisplayWelcome()
+    {
+        Console.WriteLine("Hello, Welcome to the Program");
+    }
     //square function
     static int SquaredNumber(int number)
     {
