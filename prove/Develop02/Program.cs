@@ -1,11 +1,30 @@
 using System;
-using System.Security.Cryptography.X509Certificates;
 
-class Program
+public class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
-    }
+        // Initialize classes
+        Journal myJournal = new Journal();
+        PromptGenerator promptGenerator = new PromptGenerator();
 
+        // Generate a random prompt and display it
+        string prompt = promptGenerator.GetRandomPrompt();
+        Console.WriteLine("Prompt: " + prompt);
+
+        // Create a new entry based on the prompt
+        Entry newEntry = new Entry(DateTime.Now.ToString(), prompt, 
+        "Just feel overwhelmed today with class assignments");
+        
+
+    
+        myJournal.AddEntry(newEntry);
+
+        // Display all entries 
+        Console.WriteLine("\nAll Journal Entries:");
+        myJournal.DisplayAll();
+
+        myJournal.SaveToFile("journal.txt");
+
+    }
 }
