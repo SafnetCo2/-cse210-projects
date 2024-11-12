@@ -3,23 +3,21 @@ using System.Security.Cryptography;
 
 public class Entry
 {
-    public string _date;
-    public string _promptText;
-    public string _entryText;
+    public string Date{ get; }
+    public string Prompt { get; }
+    public string Response{ get; }
 //constructor to initialize the entry
-public Entry(string date, string promptText, string entryText)
+public Entry(string date, string prompt, string response)
 {
-        _date = date;
-    _promptText = promptText;
-        _entryText = entryText;
+    Date = date;
+    Prompt = prompt;
+    Response =response;
 }
-    public void Display()
+    public override string ToString()
     {
-        Console.WriteLine($"Date: {_date}");
-        Console.WriteLine($"Prompt: {_promptText}");
-        Console.WriteLine($"Entry: {_entryText}");
-        Console.WriteLine("------------");
+        return "$ {Date}|{Prompt}|{Response}";
+    }
 
         
-    }
+    
 }

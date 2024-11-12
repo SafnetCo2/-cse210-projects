@@ -3,36 +3,20 @@ using System.Collections.Generic;
 
 public class PromptGenerator
 {
-    private List<string> _prompts;
-
-    public PromptGenerator()
+    private List<string> _prompts = new List<string>
     {
-        //  sample prompts
-        _prompts = new List<string>
-        {
-            "Did you pray today?",
-            "which hymn did you sing",
-            "did you smile or you was moody?",
-            "Reflect on a challenge you faced recently.",
-            "name other things to do today?"
-        };
-    }
+        "Did you pray today?",
+        "Which hymn did you sing?",
+        "Did you smile or were you moody?",
+        "Reflect on a challenge you faced recently.",
+        "Name other things to do today?"
+    };
+
+    private Random _random = new Random();
 
     public string GetRandomPrompt()
     {
-        if (_prompts.Count == 0)
-        {
-            return "No prompts available.";
-        }
-
-        Random random = new Random();
-        int index = random.Next(_prompts.Count);
+        int index = _random.Next(_prompts.Count); 
         return _prompts[index];
-    }
-
-
-    public void AddPrompt(string prompt)
-    {
-        _prompts.Add(prompt);
     }
 }
