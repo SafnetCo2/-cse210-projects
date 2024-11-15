@@ -1,73 +1,58 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.Json;
 
 public class Journal
 {
-    private List<Entry> entries = new List<Entry>();
+    private List<Entry> _entries;
 
-    public void AddEntry(Entry entry)
+    public Journal()
     {
-        entries.Add(entry);
+        _entries = new List<Entry>();
     }
 
+    // Add a new entry
+    public void AddEntry(Entry entry)
+    {
+        _entries.Add(entry);
+    }
+
+    // Display all entries
     public void DisplayAll()
     {
-        if (entries.Count == 0)
+        if (_entries.Count == 0)
         {
-            Console.WriteLine("No entries to display");
+            Console.WriteLine("No entries to display.");
         }
         else
         {
-            foreach (var entry in entries)
+            foreach (Entry entry in _entries)
             {
-                Console.WriteLine(entry.ToString());
+                entry.Display();
             }
         }
     }
 
+    // Save journal to a file in JSON format
     public void SaveToFile(string filename)
     {
-        // Using StreamWriter to save journal entries to the specified file
-        using (StreamWriter writer = new StreamWriter(filename))
-        {
-            foreach (var entry in entries)
-            {
-                writer.WriteLine(entry.ToString());
-            }
-        }
-        Console.WriteLine("Journal saved successfully!");
-
-        string sampleFileName = "journal.txt";
-        using (StreamWriter outputFile = new StreamWriter(sampleFileName))
-        {
-        
-            outputFile.WriteLine("first line in the file.");
-            string color = "Blue";
-            outputFile.WriteLine($"My favorite color is {color}");
-        }
+        string json = JsonSerializer.Serialize(_entries, new JsonSerializerOptions { WriteIndented = true });
+        File.WriteAllText(filename, json);
+        Console.WriteLine("Journal saved to " + filename);
     }
 
+    // Load journal from a file in JSON format
     public void LoadFromFile(string filename)
     {
-        if (!File.Exists(filename))
+        if (File.Exists(filename))
         {
-            Console.WriteLine("File not found");
-            return;
+            string json = File.ReadAllText(filename);
+            _entries = JsonSerializer.Deserialize<List<Entry>>(json);
         }
-
-        entries.Clear();
-
-        using (StreamReader reader = new StreamReader(filename))
+        else
         {
-            string line;
-            while ((line = reader.ReadLine()) != null)
-            {
-                var parts = line.Split('|');
-                var entry = new Entry(parts[0].Trim(), parts[1].Trim(), parts[2].Trim());
-                entries.Add(entry);
-            }
+            Console.WriteLine("File not found: " + filename);
         }
-        Console.WriteLine("Journal loaded successfully!");
     }
 }
