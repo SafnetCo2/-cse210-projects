@@ -26,7 +26,7 @@ public class Entry
         Console.WriteLine("Prompt: " + _prompt);
         Console.WriteLine("Response: " + _response);
 
-        // Only display realistic goal if is not empty
+        // Only display priority goal if is not empty
         if (!string.IsNullOrEmpty(_priority))
         {
             Console.WriteLine("priority: " + _priority);
