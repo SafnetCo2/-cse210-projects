@@ -12,7 +12,7 @@ public class Program
         while (running)
         {
             // Display the menu
-            Console.WriteLine("\nJournal Menu");
+            Console.WriteLine("\nJournal steps to follow");
             Console.WriteLine("1. Write a new entry");
             Console.WriteLine("2. Display all entries");
             Console.WriteLine("3. Save journal to a file");
@@ -31,16 +31,17 @@ public class Program
                     Console.WriteLine("Prompt: " + prompt);
                     Console.Write("Enter your response: ");
                     string response = Console.ReadLine();
+                    // prompt a goal for priority
+                    Console.WriteLine("Enter priority level(high,medium,low:)");
+                    // Prompt for goal and if its nextSteps
+                    Console.WriteLine("Enter priority level (high, medium, low): ");
+                    string priority = Console.ReadLine();
 
-                    // Prompt for mood and location
-                    Console.Write("Enter your mood (optional): ");
-                    string mood = Console.ReadLine();
-
-                    Console.Write("Enter your location (optional): ");
-                    string location = Console.ReadLine();
-
+                    Console.Write("Enter next steps(optional): ");
+                    string nextSteps= Console.ReadLine();
+                    
                     // Create and add a new entry
-                    Entry newEntry = new Entry(DateTime.Now.ToString("MM/dd/yyyy HH:mm"), prompt, response, mood, location);
+                    Entry newEntry = new Entry(DateTime.Now.ToString("MM/dd/yyyy HH:mm"), prompt, response, priority, nextSteps);
                     myJournal.AddEntry(newEntry);
                     break;
 

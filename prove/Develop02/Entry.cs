@@ -6,17 +6,17 @@ public class Entry
     private string _date;
     private string _prompt;
     private string _response;
-    private string _mood;
-    private string _location;
+    private string _priority;
+    private string _nextSteps;
 
     // Constructor to initialize the entry 
-        public Entry(string date, string prompt, string response, string mood = "", string location = "")
+        public Entry(string date, string prompt, string response, string priority= "", string nextSteps = "")
     {
         _date = date;
         _prompt = prompt;
         _response = response;
-        _mood = mood;
-        _location = location;
+        _priority= priority;
+        _nextSteps = nextSteps;
     }
 
     // Method to display the entry
@@ -26,16 +26,16 @@ public class Entry
         Console.WriteLine("Prompt: " + _prompt);
         Console.WriteLine("Response: " + _response);
 
-        // Only display Mood if it is not empty
-        if (!string.IsNullOrEmpty(_mood))
+        // Only display realistic goal if is not empty
+        if (!string.IsNullOrEmpty(_priority))
         {
-            Console.WriteLine("Mood: " + _mood);
+            Console.WriteLine("priority: " + _priority);
         }
 
-        // Only display Location if it is not empty
-        if (!string.IsNullOrEmpty(_location))
+        // Only display nextSteps if it is not empty
+        if (!string.IsNullOrEmpty(_nextSteps))
         {
-            Console.WriteLine("Location: " + _location);
+            Console.WriteLine("nextSteps: " + _nextSteps);
         }
 
         Console.WriteLine("-------------------------");
