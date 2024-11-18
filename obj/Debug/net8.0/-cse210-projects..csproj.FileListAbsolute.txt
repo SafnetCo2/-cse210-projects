@@ -1,0 +1,5 @@
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./obj/Debug/net8.0/-cse210-projects..GeneratedMSBuildEditorConfig.editorconfig
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./obj/Debug/net8.0/-cse210-projects..AssemblyInfoInputs.cache
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./obj/Debug/net8.0/-cse210-projects..AssemblyInfo.cs
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./obj/Debug/net8.0/-cse210-projects..csproj.CoreCompileInputs.cache
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./obj/Debug/net8.0/-cse210-projects..sourcelink.json

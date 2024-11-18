@@ -1,0 +1,15 @@
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./csharp-prep/Prep4/bin/Debug/net8.0/Prep4
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./csharp-prep/Prep4/bin/Debug/net8.0/Prep4.deps.json
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./csharp-prep/Prep4/bin/Debug/net8.0/Prep4.runtimeconfig.json
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./csharp-prep/Prep4/bin/Debug/net8.0/Prep4.dll
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./csharp-prep/Prep4/bin/Debug/net8.0/Prep4.pdb
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./csharp-prep/Prep4/obj/Debug/net8.0/Prep4.GeneratedMSBuildEditorConfig.editorconfig
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./csharp-prep/Prep4/obj/Debug/net8.0/Prep4.AssemblyInfoInputs.cache
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./csharp-prep/Prep4/obj/Debug/net8.0/Prep4.AssemblyInfo.cs
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./csharp-prep/Prep4/obj/Debug/net8.0/Prep4.csproj.CoreCompileInputs.cache
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./csharp-prep/Prep4/obj/Debug/net8.0/Prep4.sourcelink.json
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./csharp-prep/Prep4/obj/Debug/net8.0/Prep4.dll
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./csharp-prep/Prep4/obj/Debug/net8.0/refint/Prep4.dll
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./csharp-prep/Prep4/obj/Debug/net8.0/Prep4.pdb
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./csharp-prep/Prep4/obj/Debug/net8.0/Prep4.genruntimeconfig.cache
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./csharp-prep/Prep4/obj/Debug/net8.0/ref/Prep4.dll

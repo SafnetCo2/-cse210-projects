@@ -9,6 +9,7 @@ public class Program
         PromptGenerator promptGenerator = new PromptGenerator();
         bool running = true;
 
+
         while (running)
         {
             // Display the menu
@@ -69,7 +70,10 @@ public class Program
 
                 case "5":
                     running = false;
+                    Console.WriteLine("Goodbye!");
+                    Environment.Exit(0);  
                     break;
+
 
                 default:
                     Console.WriteLine("Invalid choice. Try again.");

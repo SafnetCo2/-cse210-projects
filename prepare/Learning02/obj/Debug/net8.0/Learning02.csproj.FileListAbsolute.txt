@@ -1,0 +1,15 @@
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./prepare/Learning02/bin/Debug/net8.0/Learning02
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./prepare/Learning02/bin/Debug/net8.0/Learning02.deps.json
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./prepare/Learning02/bin/Debug/net8.0/Learning02.runtimeconfig.json
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./prepare/Learning02/bin/Debug/net8.0/Learning02.dll
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./prepare/Learning02/bin/Debug/net8.0/Learning02.pdb
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./prepare/Learning02/obj/Debug/net8.0/Learning02.GeneratedMSBuildEditorConfig.editorconfig
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./prepare/Learning02/obj/Debug/net8.0/Learning02.AssemblyInfoInputs.cache
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./prepare/Learning02/obj/Debug/net8.0/Learning02.AssemblyInfo.cs
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./prepare/Learning02/obj/Debug/net8.0/Learning02.csproj.CoreCompileInputs.cache
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./prepare/Learning02/obj/Debug/net8.0/Learning02.sourcelink.json
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./prepare/Learning02/obj/Debug/net8.0/Learning02.dll
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./prepare/Learning02/obj/Debug/net8.0/refint/Learning02.dll
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./prepare/Learning02/obj/Debug/net8.0/Learning02.pdb
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./prepare/Learning02/obj/Debug/net8.0/Learning02.genruntimeconfig.cache
+/home/josphine/Desktop/Cse210-projects/-cse210-projects./prepare/Learning02/obj/Debug/net8.0/ref/Learning02.dll
