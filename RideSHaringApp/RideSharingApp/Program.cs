@@ -51,3 +51,4 @@ namespace RideSharingApp
         }
     }
 }
+// to run the program dotnet run
