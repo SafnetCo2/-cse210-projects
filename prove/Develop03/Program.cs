@@ -18,42 +18,51 @@ class Program
             new Scripture("John 8:36", "If the Son therefore shall make you free, ye shall be free indeed.")
         };
 
-        // Pick a random scripture from the list
-        Random random = new Random();
-        var selectedScripture = scriptures[random.Next(scriptures.Count)];
+        bool continueProgram = true;
 
-        // Step 1: Display the scripture
-        selectedScripture.Display();
-
-        // Step 2: Hide random words and prompt user until all words are hidden
-        while (!selectedScripture.IsCompletelyHidden())
+        while (continueProgram)
         {
-            Console.WriteLine("Press Enter to hide some words and memorize the scripture, or type 'quit' to exit:");
-            string input = Console.ReadLine();
-            if (input.ToLower() == "quit")
+            // Pick a random scripture from the list
+            Random random = new Random();
+            var selectedScripture = scriptures[random.Next(scriptures.Count)];
+
+            // Step 1: Display the scripture
+            selectedScripture.Display();
+
+            // Step 2: Hide random words and prompt user until all words are hidden
+            while (!selectedScripture.IsCompletelyHidden())
+            {
+                Console.WriteLine("Press Enter to hide some words and memorize the scripture, or type 'quit' to exit:");
+                string input = Console.ReadLine();
+                if (input.ToLower() == "quit")
+                {
+                    continueProgram = false;
+                    break;
+                }
+
+                // Hide words and display scripture
+                selectedScripture.HideRandomWords(4); // Hide 4 random words
+                selectedScripture.Display();
+            }
+
+            if (!continueProgram)
             {
                 break;
             }
 
-            // Hide words and display scripture
-            selectedScripture.HideRandomWords(4); // Hide 4 random words
-            selectedScripture.Display();
+            // Step 3: When all words are hidden, prompt the user to continue or quit
+            Console.WriteLine("All words are hidden.");
+            Console.WriteLine("Press 'c' to continue with a new scripture or 'q' to quit.");
+            string finalInput = Console.ReadLine();
+            if (finalInput.ToLower() == "q")
+            {
+                continueProgram = false;
+                Console.WriteLine("Nice try! Keep memorizing.");
+            }
         }
 
-        // Step 3: When all words are hidden, prompt the user to continue or quit
-        Console.WriteLine("All words are hidden.");
-        Console.WriteLine("Press 'c' to continue or 'q' to quit.");
-        string finalInput = Console.ReadLine();
-        if (finalInput.ToLower() == "q")
-        {
-            Console.WriteLine("Nice try! Keep memorizing.");
-        }
-        else
-        {
-            Console.WriteLine("Goodbye!");
-        }
-
-        // Step 4: Display "BBB"
+        // Step 4: Display "Goodbye!" and "BBB"
+        Console.WriteLine("Goodbye!");
         Console.WriteLine("BBB");
     }
 }
