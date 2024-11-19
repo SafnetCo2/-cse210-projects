@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 class Program
 {
+    private static readonly Random rand = new Random();
+
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Develop03 World!");
@@ -23,8 +25,7 @@ class Program
         while (continueProgram)
         {
             // Pick a random scripture from the list
-            Random random = new Random();
-            var selectedScripture = scriptures[random.Next(scriptures.Count)];
+            var selectedScripture = scriptures[rand.Next(scriptures.Count)];
 
             // Step 1: Display the scripture
             selectedScripture.Display();
@@ -53,11 +54,23 @@ class Program
             // Step 3: When all words are hidden, prompt the user to continue or quit
             Console.WriteLine("All words are hidden.");
             Console.WriteLine("Press 'c' to continue with a new scripture or 'q' to quit.");
-            string finalInput = Console.ReadLine();
-            if (finalInput.ToLower() == "q")
+            while (true)
             {
-                continueProgram = false;
-                Console.WriteLine("Nice try! Keep memorizing.");
+                string finalInput = Console.ReadLine();
+                if (finalInput.ToLower() == "q")
+                {
+                    continueProgram = false;
+                    Console.WriteLine("Nice try! Keep memorizing.");
+                    break;
+                }
+                else if (finalInput.ToLower() == "c")
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please press 'c' to continue or 'q' to quit.");
+                }
             }
         }
 

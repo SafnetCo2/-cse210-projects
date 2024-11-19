@@ -14,7 +14,6 @@ public class Word
         IsHidden = true;
     }
 
-    // Returns the word as it is or replaced with underscores
     public string GetDisplayText()
     {
         return IsHidden ? new string('_', Text.Length) : Text;
