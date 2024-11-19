@@ -45,6 +45,7 @@ namespace FractionSample
             {
                 if (value == 0)
                     throw new ArgumentException("The denominator can't be zero");
+                    
                 _bottom = value;
             }
         }
