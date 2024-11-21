@@ -10,7 +10,7 @@ class Program
         Console.WriteLine("Hello Develop03 World!");
 
         // Define a collection of Scriptures
-        var scriptures = new List<Scripture>
+        var MyFavScriptures = new List<Scripture>
         {
             new Scripture("John 3:16", "For God so loved the world that he gave his one and only son, that whoever believes in him shall not perish but have eternal life."),
             new Scripture("Proverbs 3:5-6", "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him and he will make your paths straight."),
@@ -24,8 +24,8 @@ class Program
 
         while (continueProgram)
         {
-            // Pick a random scripture from the list
-            var selectedScripture = scriptures[rand.Next(scriptures.Count)];
+            // randomly a scripture is chosen
+            var selectedScripture = MyFavScriptures[rand.Next(MyFavScriptures.Count)];
 
             // Step 1: Display the scripture
             selectedScripture.Display();
@@ -42,7 +42,7 @@ class Program
                 }
 
                 // Hide words and display scripture
-                selectedScripture.HideRandomWords(4); // Hide 4 random words
+                selectedScripture.HideRandomWords(4); // 4 random words will be hidden after press enter
                 selectedScripture.Display();
             }
 
@@ -56,14 +56,14 @@ class Program
             Console.WriteLine("Press 'c' to continue with a new scripture or 'q' to quit.");
             while (true)
             {
-                string finalInput = Console.ReadLine();
-                if (finalInput.ToLower() == "q")
+                string finalInputIs = Console.ReadLine();
+                if (finalInputIs.ToLower() == "q")
                 {
                     continueProgram = false;
                     Console.WriteLine("Nice try! Keep memorizing.");
                     break;
                 }
-                else if (finalInput.ToLower() == "c")
+                else if (finalInputIs.ToLower() == "c")
                 {
                     break;
                 }
