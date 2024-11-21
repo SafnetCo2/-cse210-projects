@@ -29,7 +29,8 @@ class Program
 
             // Step 1: Display the scripture
             selectedScripture.Display();
-
+            
+            Console.WriteLine();
             // Step 2: Hide random words and prompt user until all words are hidden
             while (!selectedScripture.IsCompletelyHidden())
             {
@@ -56,14 +57,14 @@ class Program
             Console.WriteLine("Press 'c' to continue with a new scripture or 'q' to quit.");
             while (true)
             {
-                string finalInputIs = Console.ReadLine();
-                if (finalInputIs.ToLower() == "q")
+                string NextOrExit = Console.ReadLine();
+                if (NextOrExit.ToLower() == "q")
                 {
                     continueProgram = false;
                     Console.WriteLine("Nice try! Keep memorizing.");
                     break;
                 }
-                else if (finalInputIs.ToLower() == "c")
+                else if (NextOrExit.ToLower() == "c")
                 {
                     break;
                 }

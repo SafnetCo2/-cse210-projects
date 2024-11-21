@@ -10,14 +10,15 @@ public class Scripture
     public Scripture(string reference, string text)
     {
         _reference = reference;
-        _words = text.Split(' ').Select(w => new Word(w)).ToList();
+        _words = text.Split(' ').Select(w => new Word(_reference,w)).ToList();
     }
-
     public void Display()
     {
         Console.Clear();
         Console.WriteLine(_reference);
-        Console.WriteLine(string.Join(" ", _words.Select(w => w.GetDisplayText())));
+        Console.WriteLine($"\"{string.Join(" ", _words.Select(w => w.GetDisplayText()))}\"");
+
+
     }
 
     public void HideRandomWords(int numberToHide)
