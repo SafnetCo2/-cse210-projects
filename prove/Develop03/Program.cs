@@ -74,8 +74,8 @@ class Program
             }
         }
 
-        // Step 4: Display "Goodbye!" and "BBB"
-        Console.WriteLine("Goodbye!");
+        
+        Console.WriteLine("make it fun to memorize 2scriptures a day ");
         Console.WriteLine("BBB");
     }
 }
