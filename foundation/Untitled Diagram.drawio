@@ -46,6 +46,9 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="89QXTlPWQm8fRgov8DnZ-26" value="program design explaination&lt;div&gt;&lt;b&gt;order class&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;contains multiple product objects one- to many relationships&lt;/b&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="370" width="360" height="130" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
