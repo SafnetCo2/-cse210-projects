@@ -4,31 +4,56 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="i1F_kWrU2W4WgM-QnYfm-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="i1F_kWrU2W4WgM-QnYfm-1" target="i1F_kWrU2W4WgM-QnYfm-1">
+        <mxCell id="i1F_kWrU2W4WgM-QnYfm-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="i1F_kWrU2W4WgM-QnYfm-1" target="i1F_kWrU2W4WgM-QnYfm-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <object label="Program class&amp;nbsp;" id="i1F_kWrU2W4WgM-QnYfm-1">
-          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fontSize=23;" vertex="1" parent="1">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fontSize=23;" parent="1" vertex="1">
             <mxGeometry x="60" y="20" width="240" height="60" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="i1F_kWrU2W4WgM-QnYfm-4" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="i1F_kWrU2W4WgM-QnYfm-4" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="164" y="80" as="sourcePoint" />
             <mxPoint x="164" y="130" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="i1F_kWrU2W4WgM-QnYfm-7" value="creates Vedio Class" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=19;" vertex="1" parent="1">
+        <mxCell id="i1F_kWrU2W4WgM-QnYfm-7" value="creates Vedio Class" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=19;" parent="1" vertex="1">
           <mxGeometry x="110" y="130" width="120" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="i1F_kWrU2W4WgM-QnYfm-8" value="vedio class" style="triangle;whiteSpace=wrap;html=1;fontSize=20;rotation=-90;" vertex="1" parent="1">
+        <mxCell id="i1F_kWrU2W4WgM-QnYfm-8" value="vedio class" style="triangle;whiteSpace=wrap;html=1;fontSize=20;rotation=-90;" parent="1" vertex="1">
           <mxGeometry x="100.79" y="269.12" width="124.62" height="194" as="geometry" />
         </mxCell>
-        <mxCell id="i1F_kWrU2W4WgM-QnYfm-10" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="i1F_kWrU2W4WgM-QnYfm-10" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="164" y="255" as="sourcePoint" />
             <mxPoint x="164" y="305" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="gm75gIGd5DaiYoZY5X_W-1" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="163" y="435" as="sourcePoint" />
+            <mxPoint x="163" y="485" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gm75gIGd5DaiYoZY5X_W-2" value="&lt;font style=&quot;font-size: 19px;&quot;&gt;Contains a list of comments&lt;/font&gt;&amp;nbsp;" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" y="-16" width="80" relative="1" as="geometry">
+            <mxPoint x="164" y="527" as="sourcePoint" />
+            <mxPoint x="140" y="510" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint x="1" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gm75gIGd5DaiYoZY5X_W-9" value="Calls ShowVedioDetails" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;fontSize=18;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="111" y="550" as="sourcePoint" />
+            <mxPoint x="191" y="550" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gm75gIGd5DaiYoZY5X_W-10" value="vedio class" style="triangle;whiteSpace=wrap;html=1;fontSize=20;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="96.79" y="563.12" width="124.62" height="194" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
