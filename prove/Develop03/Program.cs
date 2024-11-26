@@ -3,7 +3,12 @@ using System.Collections.Generic;
 
 class Program
 {
+
     private static readonly Random rand = new Random();
+    //Encapsulation logic in private field of rand
+    //generates random values
+    //internal implementation is hidden 
+    //since cant be accessed outside Program class
 
     static void Main(string[] args)
     {
