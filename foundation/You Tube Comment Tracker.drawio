@@ -15,11 +15,8 @@
         <mxCell id="i1F_kWrU2W4WgM-QnYfm-4" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="164" y="80" as="sourcePoint" />
-            <mxPoint x="164" y="130" as="targetPoint" />
+            <mxPoint x="162" y="180" as="targetPoint" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="i1F_kWrU2W4WgM-QnYfm-7" value="creates Vedio Class" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=19;" parent="1" vertex="1">
-          <mxGeometry x="110" y="130" width="120" height="120" as="geometry" />
         </mxCell>
         <mxCell id="i1F_kWrU2W4WgM-QnYfm-8" value="vedio class" style="triangle;whiteSpace=wrap;html=1;fontSize=20;rotation=-90;" parent="1" vertex="1">
           <mxGeometry x="100.79" y="269.12" width="124.62" height="194" as="geometry" />
@@ -132,13 +129,21 @@
             <mxPoint x="-16" y="30" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="8mO65CoOKj6LJaK0WE7Y-1" value="&lt;p style=&quot;margin-bottom: 0in; line-height: 1.5px; background: transparent;&quot;&gt;&lt;font style=&quot;&quot; face=&quot;Tibetan Machine Uni&quot;&gt;&lt;font style=&quot;font-size: 19px;&quot;&gt;&lt;b style=&quot;&quot;&gt;Program Flow chart&lt;/b&gt;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li style=&quot;&quot;&gt;&lt;p style=&quot;text-align: justify; margin-bottom: 0in; line-height: 1.5px; background: transparent;&quot;&gt;&lt;font face=&quot;Tibetan Machine Uni&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;program class creates Vedeo objects and adds them to a list,&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;p style=&quot;text-align: justify; margin-bottom: 0in; line-height: 1.5px; background: transparent;&quot;&gt;&lt;font face=&quot;Tibetan Machine Uni&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;in each vedio the program calls the AddComment() method of the Vedio class ,passing the person commenting and comment text&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;p style=&quot;text-align: justify; margin-bottom: 0in; line-height: 1.5px; background: transparent;&quot;&gt;&lt;font face=&quot;Tibetan Machine Uni&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;The vedio Class calls ShowVedioDetails() on each Vedio object to display the vedio details with corresponding comments.&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;p style=&quot;text-align: justify; margin-bottom: 0in; line-height: 1.5px; background: transparent;&quot;&gt;&lt;font style=&quot;&quot; face=&quot;Tibetan Machine Uni&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;To retrieve,display the list of comments the vedio class will use GetComments() method&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;align=center;" vertex="1" parent="1">
+        <mxCell id="8mO65CoOKj6LJaK0WE7Y-1" value="&lt;p style=&quot;margin-bottom: 0in; line-height: 1.5px; background: transparent;&quot;&gt;&lt;font style=&quot;&quot; face=&quot;Tibetan Machine Uni&quot;&gt;&lt;font style=&quot;font-size: 19px;&quot;&gt;&lt;b style=&quot;&quot;&gt;Program Flow chart&lt;/b&gt;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li style=&quot;&quot;&gt;&lt;p style=&quot;text-align: justify; margin-bottom: 0in; line-height: 1.5px; background: transparent;&quot;&gt;&lt;font face=&quot;Tibetan Machine Uni&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;program class creates Vedeo objects and adds them to a list,&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;p style=&quot;text-align: justify; margin-bottom: 0in; line-height: 1.5px; background: transparent;&quot;&gt;&lt;font face=&quot;Tibetan Machine Uni&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;in each vedio the program calls the AddComment() method of the Vedio class ,passing the person commenting and comment text&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;p style=&quot;text-align: justify; margin-bottom: 0in; line-height: 1.5px; background: transparent;&quot;&gt;&lt;font face=&quot;Tibetan Machine Uni&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;The vedio Class calls ShowVedioDetails() on each Vedio object to display the vedio details with corresponding comments.&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;p style=&quot;text-align: justify; margin-bottom: 0in; line-height: 1.5px; background: transparent;&quot;&gt;&lt;font style=&quot;&quot; face=&quot;Tibetan Machine Uni&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;To retrieve,display the list of comments the vedio class will use GetComments() method&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;align=center;" parent="1" vertex="1">
           <mxGeometry y="1035" width="814" height="144" as="geometry" />
         </mxCell>
-        <mxCell id="8mO65CoOKj6LJaK0WE7Y-2" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="8mO65CoOKj6LJaK0WE7Y-2" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="160" y="526" as="sourcePoint" />
             <mxPoint x="160" y="556" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OTf-uhdhOmuF3-0hVco2-3" value="&lt;span style=&quot;font-size: 19px;&quot;&gt;Creates a Vedio Class&lt;/span&gt;" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.403" y="8" width="80" relative="1" as="geometry">
+            <mxPoint x="176" y="219" as="sourcePoint" />
+            <mxPoint x="243" y="219" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
