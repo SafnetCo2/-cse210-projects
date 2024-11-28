@@ -1,0 +1,17 @@
++-------------+
+|Comment class|
++-------------+
+|-UserComment:string|
+|Text:string
++--------------+
+|+ UserComment(UserComment:string,text:string)
++------------+
+
+Vedio class
+1) Attributes Fields that describe the propertied of the Vedio class Title,Author,LengthInSeconds,Comments
+LengthInSeconds int
+Comments:List<Comment>
+2)Methods
+AddComments(name:string, text:string):void
+CountComment():int
+VedioDetails():void
