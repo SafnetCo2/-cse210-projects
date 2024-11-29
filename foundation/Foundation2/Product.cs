@@ -1,22 +1,28 @@
+using System;
+
 public class Product
 {
-    public string Name { get; set; }
-    public int ProductId { get; set; }
-    public double Price { get; set; }
-    public int Quantity { get; set; }
+    private string _name { get; set; }
+    private int _productId { get; set; }
+    private double _price { get; set; }
+    private int _quantity { get; set; }
 
-    // Constructor
+    // Constructor to initialize the product with details
     public Product(string name, int productId, double price, int quantity)
     {
-        Name = name;
-        ProductId = productId;
-        Price = price;
-        Quantity = quantity;
+        _name = name;
+        _productId = productId;
+        _price = price;
+        _quantity = quantity;
     }
 
-    // Calculate the total cost of the product (price * quantity)
+    // Get the total cost of the product (price * quantity)
     public double TotalOrderCost()
     {
-        return Price * Quantity;
+        return _price * _quantity;
     }
+
+    // Public getters for the name and product ID
+    public string Name => _name;
+    public int ProductId => _productId;
 }

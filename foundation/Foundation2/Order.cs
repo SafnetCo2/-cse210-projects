@@ -3,52 +3,51 @@ using System.Collections.Generic;
 
 public class Order
 {
-    private List<Product> Products { get; set; }
-    private Customer Customer { get; set; }
-    private const double USA_ShippingCost = 5.00;
-    private const double International_ShippingCost = 35.00;
+    private List<Product> _products { get; set; }
+    private Customer _customer { get; set; }
+    private const double _usaShippingCost = 5.00;
+    private const double _internationalShippingCost = 35.00;
 
     // Constructor to initialize the order with a customer
     public Order(Customer customer)
     {
-        Products = new List<Product>();
-        Customer = customer;
+        _products = new List<Product>();
+        _customer = customer;
     }
 
     // Add a product to an order
     public void AddProduct(Product product)
     {
-        Products.Add(product);
+        _products.Add(product);
     }
 
     // Compute the total cost of the order (product costs + shipping cost)
     public double TotalOrderCost()
     {
         double totalProductCost = 0;
-        foreach (var product in Products)
+        foreach (var product in _products)
         {
             totalProductCost += product.TotalOrderCost();
-            
         }
 
-        double shippingCost = Customer.LocationUSA() ? USA_ShippingCost : International_ShippingCost;
+        double shippingCost = _customer.LocationUSA() ? _usaShippingCost : _internationalShippingCost;
         return totalProductCost + shippingCost;
     }
 
-    // packing label
+    // Generate packing label
     public string PackingLabel()
     {
         string label = "Packing Label:\n";
-        foreach (var product in Products)
+        foreach (var product in _products)
         {
             label += $"{product.Name} (Product ID: {product.ProductId})\n";
         }
         return label;
     }
 
-    //  shipping label
+    // Generate shipping label
     public string ShippingLabel()
     {
-        return $"Shipping Label:\n{Customer.DisplayName()}\n{Customer.DisplayAddress()}";
+        return $"Shipping Label:\n{_customer.DisplayName()}\n{_customer.DisplayAddress()}";
     }
 }

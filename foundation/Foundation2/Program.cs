@@ -5,8 +5,8 @@ class Program
     static void Main(string[] args)
     {
         // Create address instances
-        Address address1 = new Address("12345 Elm st", "Houston", "TX", "USA");
-        Address address2 = new Address("12345 Maple Av", "Toronto", "ON", "Canada");
+        Address address1 = new Address("12345 Elm St", "Houston", "TX", "USA");
+        Address address2 = new Address("12345 Maple Ave", "Toronto", "ON", "Canada");
 
         // Create customer instances
         Customer customer1 = new Customer("Mapy Jim", address1);
@@ -31,6 +31,6 @@ class Program
 
         Console.WriteLine(order2.PackingLabel());
         Console.WriteLine(order2.ShippingLabel());
-        Console.WriteLine($"Total Cost: ${Math.Round(order2.TotalOrderCost(), 2)}\n"); 
+        Console.WriteLine($"Total Cost: ${Math.Round(order2.TotalOrderCost(), 2)}\n");
     }
 }
