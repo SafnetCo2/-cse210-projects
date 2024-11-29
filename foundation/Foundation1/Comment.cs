@@ -1,20 +1,19 @@
-//comment.cs
-//represents ca comments and provides a method to return formatted string of the comment
-
+// Represents a Comment and provides a method to return a formatted string of the comment
 public class Comment
 {
-public  string ViewersCommentName { get; set; }
-public string ViewersCommentText{ get; set; }
-//Constructor
-public Comment(string viewersCommentName,string viewersCommentText)
-{
+    public string ViewersCommentName { get; set; }
+    public string ViewersCommentText { get; set; }
+
+    // Constructor
+    public Comment(string viewersCommentName, string viewersCommentText)
+    {
         ViewersCommentName = viewersCommentName;
         ViewersCommentText = viewersCommentText;
-}
-    //method to display viewers comment
-    public override string ToString()
-    {
-        return $"{ViewersCommentName}:{ViewersCommentText}";
     }
 
+    // Method to display the viewer's comment in a formatted way
+    public override string ToString()
+    {
+        return $"{ViewersCommentName}: {ViewersCommentText}";
+    }
 }
