@@ -6,7 +6,7 @@ The Mindfulness Activity App is designed to help users engage in three distinct 
 
 This app demonstrates core Object-Oriented Programming (OOP) principles in C#, such as Abstraction, Inheritance, and Encapsulation. Each activity is implemented as a class that extends a base `Activity` class, providing reflective prompts and inspirational Bible quotes.
 
-![Mindfulness Activity Output](../Develop05/assets/mindfulnessScreenshot.png)
+![Mindfulness Activity Output](../Develop05/assests/mindfullScreenshot%20from%202024-12-07%2012-17-59.png)
 
 ---
 
@@ -17,7 +17,7 @@ This app demonstrates core Object-Oriented Programming (OOP) principles in C#, s
 The Breathing Activity guides users through a series of deep breathing exercises designed to foster relaxation and focus.
 
 **Example Output:**
-![Breathing Activity Output](../Develop05/assets/breathingScreenshot.png)
+![Breathing Activity Output](../Develop05/assests/BreathScreenshot%20from%202024-12-07%2012-23-58.png)
 
 ---
 
@@ -26,8 +26,8 @@ The Breathing Activity guides users through a series of deep breathing exercises
 The Reflection Activity invites users to reflect on their experiences and respond to prompts, encouraging introspection and mindfulness.
 
 **Example Outputs:**
-![Reflection Activity Output 1](../Develop05/assets/reflection1Screenshot.png)  
-![Reflection Activity Output 2](../Develop05/assets/reflection2Screenshot.png)
+![Reflection Activity Output 1](../Develop05/assests/Refle1Screenshot%20from%202024-12-07%2012-25-08.png)  
+![Reflection Activity Output 2](../Develop05/assests/Refle2Screenshot%20from%202024-12-07%2012-25-18.png)
 
 ---
 
@@ -36,8 +36,8 @@ The Reflection Activity invites users to reflect on their experiences and respon
 The Listing Activity enhances mindfulness by encouraging users to focus on the sounds around them and reflect on what they hear.
 
 **Example Outputs:**
-![Listing Activity Output 1](../Develop05/assets/listing1Screenshot.png)  
-![Listing Activity Output 2](../Develop05/assets/listing2Screenshot.png)
+![Listing Activity Output 1](../Develop05/assests/LScreenshot%20from%202024-12-07%2012-54-53.png)  
+![Listing Activity Output 2](../Develop05/assests/l2Screenshot%20from%202024-12-07%2012-55-41.png)
 
 ---
 
