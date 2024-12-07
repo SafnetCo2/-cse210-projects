@@ -24,36 +24,42 @@ public class ReflectionActivity : Activity
         "How can you keep this experience in mind in the future?"
     };
 
+    private string[] bibleQuotes = {
+        "But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness, gentleness and self-control. – Galatians 5:22-23",
+        "And let us not grow weary of doing good, for in due season we will reap, if we do not give up. – Galatians 6:9",
+        "The generous will themselves be blessed, for they share their food with the poor. – Proverbs 22:9",
+        "Do nothing out of selfish ambition or vain conceit. Rather, in humility value others above yourselves. – Philippians 2:3",
+        "Each of you should use whatever gift you have received to serve others, as faithful stewards of God’s grace in its various forms. – 1 Peter 4:10"
+    };
+
     private string logFilePath = "reflection_log.txt"; // Path to store the logs
 
-    public ReflectionActivity()
-        : base("Reflection", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.")
+    public ReflectionActivity() : base("", "")
     {
+        // Display the welcome message with color
+        Console.ForegroundColor = ConsoleColor.Cyan; // Set color to Cyan for the welcome message
+        Console.WriteLine("\nWelcome to the Reflection Activity!");
+        Console.ResetColor(); // Reset the color to default
     }
 
     // Ensure this is overridden from Activity
     public override void DoActivity()
     {
-        // Display the welcome message and the "Get Ready" message at the start of the activity
-        Console.WriteLine("\nWelcome to the Reflection Activity!");
         Console.WriteLine("In this activity, you will reflect on meaningful experiences that have helped shape who you are today.");
         Console.WriteLine("Take your time and think deeply about your responses. Let's begin!\n");
 
-        // Load previous logs if available
-        LoadLogs();
+        
+        LoadAndDisplayLastLogs(3);
 
-        // Get ready message with a spinner
         Console.WriteLine("Get ready...");
-        ShowSpinner(3);  // Shows spinner for 3 seconds
-
-        // Display a random prompt
+        ShowSpinner(5);  
         string randomPrompt = prompts[random.Next(prompts.Length)];
         Console.WriteLine($"\nPrompt: {randomPrompt}\n");
 
         // Log the prompt to the log file
         LogToFile($"Prompt: {randomPrompt}");
 
-        // Ask reflection questions for the specified duration
+
         int elapsedTime = 0;
         while (elapsedTime < _duration)
         {
@@ -64,20 +70,24 @@ public class ReflectionActivity : Activity
 
                 // Ask the question
                 Console.WriteLine($"\nQuestion: {question}\n");
+
                 LogToFile($"Question: {question}");
 
                 // Capture user's reflection
                 string userResponse = Console.ReadLine();
                 LogToFile($"Answer: {userResponse}");
 
-                // Show spinner for 3 seconds pause between questions
+                                DisplayBibleQuote();
+
+                
                 ShowSpinner(3);
-                elapsedTime += 3; // Increment the elapsed time by 3 seconds for each question
+                elapsedTime += 3; 
+                
             }
         }
 
-        // Ending message after activity completion
-        base.DisplayEndingMessage(); // Calls the base class method
+        
+        base.DisplayEndingMessage(); 
         Console.WriteLine("\nGood job reflecting on your experiences.\n");
     }
 
@@ -86,13 +96,16 @@ public class ReflectionActivity : Activity
     {
         string[] spinner = { "|", "/", "-", "\\" };
         int counter = 0;
-        for (int i = 0; i < seconds * 2; i++) // Spinner runs for 'seconds' seconds
+        for (int i = 0; i < seconds * 2; i++)
+    
         {
             Console.Write("\r" + spinner[counter]);
             counter = (counter + 1) % spinner.Length;
-            Thread.Sleep(500); // Wait for half a second before updating the spinner
+            Thread.Sleep(500); 
+            
         }
-        Console.WriteLine(); // Move to the next line after the spinner ends
+        Console.WriteLine(); 
+        
     }
 
     // Method to save logs to the file
@@ -111,19 +124,21 @@ public class ReflectionActivity : Activity
         }
     }
 
-    // Method to load previous logs and display them
-    private void LoadLogs()
+    // Method to load and display only the last 'count' logs
+    private void LoadAndDisplayLastLogs(int count)
     {
         if (File.Exists(logFilePath))
         {
-            Console.WriteLine("\nPrevious Reflection Activity Logs:\n");
-
             try
             {
                 string[] logs = File.ReadAllLines(logFilePath);
-                foreach (var log in logs)
+
+                // Display only the last 'count' logs
+                int startIndex = Math.Max(0, logs.Length - count);
+                Console.WriteLine("\nPrevious Reflection Activity Logs:\n");
+                for (int i = startIndex; i < logs.Length; i++)
                 {
-                    Console.WriteLine(log);
+                    Console.WriteLine(logs[i]);
                 }
             }
             catch (Exception ex)
@@ -137,5 +152,17 @@ public class ReflectionActivity : Activity
         {
             Console.WriteLine("No previous logs found.\n");
         }
+    }
+
+    // Method to display a random Bible quote after user response
+    private void DisplayBibleQuote()
+    {
+        // Pick a random Bible quote
+        string randomBibleQuote = bibleQuotes[random.Next(bibleQuotes.Length)];
+
+        //  color to Green for the Bible quote
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("\nBible Quote: " + randomBibleQuote);
+        Console.ResetColor(); 
     }
 }

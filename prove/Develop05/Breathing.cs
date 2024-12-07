@@ -62,8 +62,8 @@ public class BreathingActivity : Activity
                 LogToFile("Ending Breathing Activity");
 
                 // Thank the user for participating
-                Console.WriteLine("Thank you for participating!");
-                LogToFile("Thank you for participating");
+                Console.WriteLine("Jesus Loves You!Thank you for participating!");
+                LogToFile("Jesus Loves You! Thank you for participating");
         }
 
         // Countdown method
@@ -87,10 +87,10 @@ public class BreathingActivity : Activity
                         {
                                 Console.Write(spin);
                                 System.Threading.Thread.Sleep(250); // Pause for 250 ms
-                                Console.Write("\b"); // Move the cursor back
+                                Console.Write("\b");
                         }
                 }
-                Console.WriteLine(); // Move to the next line after the spinner
+                Console.WriteLine();
         }
 
         // Method to save logs to a file

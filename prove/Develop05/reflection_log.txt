@@ -18,3 +18,26 @@ Reflection:
 12/6/2024 5:55:08 PM: Prompt: Think of a time when you did something really difficult.
 12/6/2024 5:55:08 PM: Question: Why was this experience meaningful to you?
 12/6/2024 5:56:10 PM: Answer: Fun
+12/7/2024 11:15:18 AM: Prompt: Think of a time when you stood up for someone else.
+12/7/2024 11:15:19 AM: Question: Why was this experience meaningful to you?
+12/7/2024 11:21:33 AM: Prompt: Think of a time when you did something really difficult.
+12/7/2024 11:21:33 AM: Question: Why was this experience meaningful to you?
+12/7/2024 11:21:46 AM: Answer: not sure
+12/7/2024 11:25:53 AM: Prompt: Think of a time when you stood up for someone else.
+12/7/2024 11:25:53 AM: Question: Why was this experience meaningful to you?
+12/7/2024 11:26:12 AM: Answer: it was great
+12/7/2024 11:28:51 AM: Prompt: Think of a time when you helped someone in need.
+12/7/2024 11:28:51 AM: Question: Why was this experience meaningful to you?
+12/7/2024 11:29:58 AM: Prompt: Think of a time when you did something really difficult.
+12/7/2024 11:29:58 AM: Question: Why was this experience meaningful to you?
+12/7/2024 11:41:34 AM: Prompt: Think of a time when you helped someone in need.
+12/7/2024 11:41:34 AM: Question: Why was this experience meaningful to you?
+12/7/2024 11:44:54 AM: Prompt: Think of a time when you stood up for someone else.
+12/7/2024 11:44:54 AM: Question: Why was this experience meaningful to you?
+12/7/2024 11:45:11 AM: Answer: ministering
+12/7/2024 11:49:31 AM: Prompt: Think of a time when you helped someone in need.
+12/7/2024 11:49:31 AM: Question: Why was this experience meaningful to you?
+12/7/2024 11:52:35 AM: Answer: yes
+12/7/2024 11:56:45 AM: Prompt: Think of a time when you did something really difficult.
+12/7/2024 11:56:46 AM: Question: Why was this experience meaningful to you?
+12/7/2024 11:57:11 AM: Answer: service to others
