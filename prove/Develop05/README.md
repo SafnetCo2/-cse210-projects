@@ -46,6 +46,31 @@ The Listing Activity enhances mindfulness by encouraging users to focus on the s
 The app is built in **C#** and employs a modular design with a base `Activity` class extended by specific activity classes (`BreathingActivity`, `ReflectionActivity`, and `ListingActivity`). Each class encapsulates the logic and prompts for its respective mindfulness activity.
 
 ---
+## How It Runs
+
+To run the Mindfulness Activity App, follow these steps:
+
+
+1. **Clone the Repository**  
+   Clone the project repository to your local machine:
+   ```bash
+   git clone https://github.com/SafnetCo2/-cse210-projects/blob/main/prove/Develop05/Program.cs
+## Open the Project
+1. Open the project folder in your preferred IDE (e.g., Visual Studio, Rider).
+
+2. Build the Project
+Ensure you have the .NET SDK installed. Run the following command in the project root directory to build the app:
+
+
+3. dotnet build
+Run the App
+Execute the app using this command:
+
+
+4. dotnet run
+Interact with the App
+Select the desired mindfulness activity (Breathing, Reflection, or Listing) and follow the prompts to engage with the activity.
+
 
 ## Open for Review
 
