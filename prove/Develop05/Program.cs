@@ -28,7 +28,7 @@ class Program
             switch (choice)
             {
                 case "1":
-                    // Passing the duration parameter (e.g., 30 seconds)
+                    
                     BeginActivity(new BreathingActivity("Breathing", "Focus on your breath please", 30));
                     break;
                 case "2":
@@ -48,7 +48,7 @@ class Program
                     break;
             }
 
-            // Ask if the user wants to perform another activity AFTER completing one
+            
             if (running)
             {
                 Console.Write("Would you like to perform another activity? (yes/no): ");
@@ -65,13 +65,14 @@ class Program
     // Begin any activity (Breathing, Reflection, Listing)
     static void BeginActivity(Activity activity)
     {
-        activity.SetDuration(GetDuration()); // Set the duration for the activity
+        activity.SetDuration(GetDuration()); 
+    
         activity.DisplayStartingMessage();
-        activity.DoActivity(); // Execute the activity
+        activity.DoActivity(); 
         activity.DisplayEndingMessage();
     }
 
-    // Get the duration for the activity
+    
     static int GetDuration()
     {
         Console.Write("Enter activity duration in seconds: ");

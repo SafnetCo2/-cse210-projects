@@ -91,7 +91,6 @@ public class ReflectionActivity : Activity
         Console.WriteLine("\nGood job reflecting on your experiences.\n");
     }
 
-    // Display a simple spinner animation for "Get Ready" message
     private void ShowSpinner(int seconds)
     {
         string[] spinner = { "|", "/", "-", "\\" };

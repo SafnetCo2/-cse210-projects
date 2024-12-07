@@ -172,7 +172,7 @@ public class ListingActivity : Activity
             Console.Write(spinner[spinnerIndex]);
             spinnerIndex = (spinnerIndex + 1) % spinner.Length;
             System.Threading.Thread.Sleep(200); 
-            Console.Write("\b"); // Erase spinner character
+            Console.Write("\b"); 
         }
     }
 }
