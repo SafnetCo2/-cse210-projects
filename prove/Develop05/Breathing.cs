@@ -9,7 +9,7 @@ public class BreathingActivity : Activity
         public override void DoActivity()
         {
                 // Display the welcome message with color
-                Console.Clear();
+                
                 Console.ForegroundColor = ConsoleColor.Cyan;  // Set color to Cyan for the welcome message
                 Console.WriteLine("Welcome to the Breathing Activity!");
                 Console.ResetColor();

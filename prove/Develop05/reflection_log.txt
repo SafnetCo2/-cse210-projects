@@ -41,3 +41,6 @@ Reflection:
 12/7/2024 11:56:45 AM: Prompt: Think of a time when you did something really difficult.
 12/7/2024 11:56:46 AM: Question: Why was this experience meaningful to you?
 12/7/2024 11:57:11 AM: Answer: service to others
+12/7/2024 12:24:17 PM: Prompt: Think of a time when you stood up for someone else.
+12/7/2024 12:24:17 PM: Question: Why was this experience meaningful to you?
+12/7/2024 12:24:47 PM: Answer: ministered to someone
