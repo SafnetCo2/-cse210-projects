@@ -38,7 +38,7 @@ public abstract class Activity
         for (int i = seconds; i > 0; i--)
         {
             Console.WriteLine(i);
-            System.Threading.Thread.Sleep(1000); // 1-second delay
+            System.Threading.Thread.Sleep(1000); 
         }
     }
 }
