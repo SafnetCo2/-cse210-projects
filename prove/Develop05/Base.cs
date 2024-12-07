@@ -1,71 +1,44 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-
 public abstract class Activity
 {
     protected string _activityName;
     protected string _description;
     protected int _duration;
-    private static Dictionary<string, int> activityLog = new Dictionary<string, int>();
 
+    // Constructor to initialize activity name and description
     public Activity(string activityName, string description)
     {
         _activityName = activityName;
         _description = description;
     }
 
+    // Set the duration for the activity
     public void SetDuration(int duration)
     {
         _duration = duration;
     }
 
-    public void DisplayStartingMessage()
+    // Abstract method to be implemented by derived classes
+    public abstract void DoActivity();
+
+    // Standard method to display the starting message for all activities
+    public virtual void DisplayStartingMessage()
     {
         Console.WriteLine($"Starting {_activityName}: {_description}");
     }
 
-    public void DisplayEndingMessage()
+    // Standard method to display the ending message for all activities
+    public virtual void DisplayEndingMessage()
     {
-        Console.WriteLine($"Ending {_activityName}. Well done!");
-        LogActivity();
+        Console.WriteLine($"Ending {_activityName}");
     }
 
-    public void ShowCountDown(int seconds)
+    // Method to show a countdown before the activity starts
+    protected void ShowCountDown(int seconds)
     {
         for (int i = seconds; i > 0; i--)
         {
-            Console.Write($"\rStarting in {i} seconds...");
-            System.Threading.Thread.Sleep(1000);
-        }
-        Console.WriteLine("\rLet's begin!       ");
-    }
-
-    private void LogActivity()
-    {
-        if (activityLog.ContainsKey(_activityName))
-        {
-            activityLog[_activityName]++;
-        }
-        else
-        {
-            activityLog[_activityName] = 1;
-        }
-
-        SaveActivityLog();
-    }
-
-    private void SaveActivityLog()
-    {
-        string filePath = "activity_log.txt";
-        using (StreamWriter writer = new StreamWriter(filePath, false))
-        {
-            foreach (var entry in activityLog)
-            {
-                writer.WriteLine($"{entry.Key}: {entry.Value} times");
-            }
+            Console.WriteLine(i);
+            System.Threading.Thread.Sleep(1000); // 1-second delay
         }
     }
-
-    public abstract void DoActivity();
 }

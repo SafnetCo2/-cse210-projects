@@ -1,46 +1,24 @@
-using System;
-
 public class BreathingActivity : Activity
 {
-        public BreathingActivity(string activityName, string description) : base(activityName, description)
+        public BreathingActivity(string activityName, string description, int duration)
+            : base(activityName, description)
         {
+                SetDuration(duration); // Set the duration
         }
 
         public override void DoActivity()
         {
+                // Display the starting message
                 DisplayStartingMessage();
+
+                // Show countdown before starting the activity
                 ShowCountDown(5);
 
-                // Call the breathing animation method
-                DisplayBreathingAnimation(_duration);
+                // Perform the breathing activity
+                Console.WriteLine("Breathe in...  Hold... Breathe out...");
+                System.Threading.Thread.Sleep(2000); // Simulating 2 seconds for each breath
 
+                // After the activity ends, display the ending message
                 DisplayEndingMessage();
-        }
-
-        public void DisplayBreathingAnimation(int duration)
-        {
-                int totalSteps = duration / 2;  // Half the time for inhaling and half for exhaling
-                for (int i = 0; i < totalSteps; i++)
-                {
-                        // Inhale animation
-                        Console.Clear();
-                        Console.WriteLine("Breathe in...");
-                        for (int j = 0; j < i; j++)
-                        {
-                                Console.Write(".");
-                                System.Threading.Thread.Sleep(100);  // Adjust speed
-                        }
-                        System.Threading.Thread.Sleep(500);  // Pause between in and out
-
-                        // Exhale animation
-                        Console.Clear();
-                        Console.WriteLine("Breathe out...");
-                        for (int j = 0; j < i; j++)
-                        {
-                                Console.Write(".");
-                                System.Threading.Thread.Sleep(100);  // Adjust speed
-                        }
-                        System.Threading.Thread.Sleep(500);  // Pause between in and out
-                }
         }
 }

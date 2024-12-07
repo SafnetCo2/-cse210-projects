@@ -28,12 +28,12 @@ class Program
             switch (choice)
             {
                 case "1":
-                    BeginActivity(new BreathingActivity("Breathing", "Focus on your breath"));
+                    // Passing the duration parameter (e.g., 30 seconds)
+                    BeginActivity(new BreathingActivity("Breathing", "Focus on your breath please", 30));
                     break;
                 case "2":
                     BeginActivity(new ReflectionActivity());
                     break;
-
                 case "3":
                     BeginActivity(new ListingActivity("Listing", "List your thoughts"));
                     break;
@@ -48,6 +48,7 @@ class Program
                     break;
             }
 
+            // Ask if the user wants to perform another activity AFTER completing one
             if (running)
             {
                 Console.Write("Would you like to perform another activity? (yes/no): ");
@@ -61,20 +62,23 @@ class Program
         }
     }
 
+    // Begin any activity (Breathing, Reflection, Listing)
     static void BeginActivity(Activity activity)
     {
-        activity.SetDuration(GetDuration());
+        activity.SetDuration(GetDuration()); // Set the duration for the activity
         activity.DisplayStartingMessage();
-        activity.DoActivity();
+        activity.DoActivity(); // Execute the activity
         activity.DisplayEndingMessage();
     }
 
+    // Get the duration for the activity
     static int GetDuration()
     {
         Console.Write("Enter activity duration in seconds: ");
         return int.TryParse(Console.ReadLine(), out int duration) && duration > 0 ? duration : 0;
     }
 
+    // Goodbye message when the program ends
     static void DisplayGoodbyeMessage()
     {
         Console.Clear();
@@ -87,7 +91,7 @@ class Program
         Console.WriteLine("****************************************************");
         Console.WriteLine();
         Console.WriteLine("We hope this program helped you find peace and clarity.");
-        Console.WriteLine("Remember to take time for yourself every day. Goodbye!");
+        Console.WriteLine("Remember Jesus Christ loves you!!  Take time for him & yourself every day. Goodbye!");
         Console.ResetColor();
     }
 }
