@@ -1,14 +1,14 @@
-using System;
-public class Circle:Shape
-
+public class Circle : Shape
 {
-    public double Radius{get; set;}
-    public Circle(string color,double radius):base(color)
+    private double _radius;
+
+    public Circle(string color, double radius) : base(color)
     {
-        Radius=radius;
+        _radius = radius;
     }
+
     public override double GetArea()
     {
-        return Math.PI*Radius*Radius;
+        return Math.PI * _radius * _radius;  // Area for circle: π * radius^2
     }
 }

@@ -1,17 +1,16 @@
-public class Rectangle:Shape
+public class Rectangle : Shape
 {
-    public double Length{get;set;}
-    public double Width{get;set;}
-    public Rectangle(string color, double length,double width):base(color)
+    private double _width;
+    private double _height;
+
+    public Rectangle(string color, double width, double height) : base(color)
     {
-    Length=length;
-    Width=width;
+        _width = width;
+        _height = height;
     }
-    //method to override the GetArea()
+
     public override double GetArea()
     {
-        return Length*Width;
+        return _width * _height;  // Area for rectangle: width * height
     }
-
-
 }

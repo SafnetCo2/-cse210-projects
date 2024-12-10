@@ -1,12 +1,11 @@
-using System;
-public abstract class Sha{
-    public string Color {get; set;}
+public abstract class Shape
+{
+    public string Color { get; set; }
+
     public Shape(string color)
     {
-        color=color;
+        Color = color;
     }
-//this class will override in derived classes
-public abstract double GetArea();
 
-
+    public abstract double GetArea();  // Polymorphic method
 }
