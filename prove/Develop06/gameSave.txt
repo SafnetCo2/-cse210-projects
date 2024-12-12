@@ -1,0 +1,5 @@
+Jose
+420
+SimpleGoal,Hike,Mount Kenya,200
+ChecklistGoal,visit a friend,saturday,20,4,2,0
+EternalGoal,pray,always,200

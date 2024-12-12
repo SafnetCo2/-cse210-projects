@@ -1,59 +1,41 @@
-using System;
-
 public class ChecklistGoal : Goal
 {
     public int TargetCount { get; set; }
-    public int CompletedCount { get; set; }
-    public int Bonus { get; set; }
+    public int BonusPoints { get; set; }
+    public int CurrentCount { get; set; }
 
-    public ChecklistGoal() { }
-
-    public ChecklistGoal(string name, string description, int points, int targetCount, int bonus)
+    public ChecklistGoal(string name, string description, int points, int targetCount, int bonusPoints)
+        : base(name, description, points)
     {
-        Name = name;
-        Description = description;
-        Points = points;
         TargetCount = targetCount;
-        CompletedCount = 0;
-        Bonus = bonus;
+        BonusPoints = bonusPoints;
+        CurrentCount = 0; // Starts with 0 completions
     }
 
-    public override void CreateGoal()
+    public override void RecordEvent()
     {
-        Console.Write("Enter goal name: ");
-        Name = Console.ReadLine();
-        Console.Write("Enter goal description: ");
-        Description = Console.ReadLine();
-        Console.Write("Enter goal points: ");
-        Points = int.Parse(Console.ReadLine());
-        Console.Write("Enter target count: ");
-        TargetCount = int.Parse(Console.ReadLine());
-        Console.Write("Enter bonus points: ");
-        Bonus = int.Parse(Console.ReadLine());
-    }
-
-    public override int RecordEvent()
-    {
-        CompletedCount++;
-        int pointsEarned = Points;
-        Console.WriteLine($"Goal '{Name}' completed {CompletedCount}/{TargetCount}! You earned {pointsEarned} points.");
-
-        if (CompletedCount == TargetCount)
+        if (CurrentCount < TargetCount)
         {
-            pointsEarned += Bonus;
-            Console.WriteLine($"Bonus of {Bonus} points awarded for completing the checklist goal!");
+            CurrentCount++;
+            Console.WriteLine($"Goal '{Name}' progress: {CurrentCount}/{TargetCount} completed.");
+            if (CurrentCount == TargetCount)
+            {
+                Console.WriteLine($"Goal '{Name}' completed! Earned {Points + BonusPoints} points.");
+            }
         }
-
-        return pointsEarned;
+        else
+        {
+            Console.WriteLine($"Goal '{Name}' is already completed.");
+        }
     }
 
-    public override string GetGoalInfo()
+    public override string ToSaveFormat()
     {
-        return $"[ ] {Name}: {Description} - Points: {Points}, Bonus: {Bonus} - Completed {CompletedCount}/{TargetCount} times";
+        return $"ChecklistGoal,{Name},{Description},{Points},{TargetCount},{BonusPoints},{CurrentCount}";
     }
 
-    public override string GetGoalSaveInfo()
+    public override string GetStringRepresentation()
     {
-        return $"ChecklistGoal|{Name}|{Description}|{Points}|{TargetCount}|{Bonus}";
+        return $"{Name}: {Description} - Points: {Points} - Bonus: {BonusPoints} - Completed {CurrentCount}/{TargetCount} times";
     }
 }

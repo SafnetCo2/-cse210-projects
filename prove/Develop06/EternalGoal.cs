@@ -1,39 +1,21 @@
-using System;
-
 public class EternalGoal : Goal
 {
-    public EternalGoal() { }
-
     public EternalGoal(string name, string description, int points)
+        : base(name, description, points)
+    { }
+
+    public override void RecordEvent()
     {
-        Name = name;
-        Description = description;
-        Points = points;
+        Console.WriteLine($"Goal '{Name}' completed! Earned {Points} points.");
     }
 
-    public override void CreateGoal()
+    public override string ToSaveFormat()
     {
-        Console.Write("Enter goal name: ");
-        Name = Console.ReadLine();
-        Console.Write("Enter goal description: ");
-        Description = Console.ReadLine();
-        Console.Write("Enter goal points: ");
-        Points = int.Parse(Console.ReadLine());
+        return $"EternalGoal,{Name},{Description},{Points}";
     }
 
-    public override int RecordEvent()
+    public override string GetStringRepresentation()
     {
-        Console.WriteLine($"Goal '{Name}' completed! You earned {Points} points.");
-        return Points;
-    }
-
-    public override string GetGoalInfo()
-    {
-        return $"[ ] {Name}: {Description} - Points: {Points}";
-    }
-
-    public override string GetGoalSaveInfo()
-    {
-        return $"EternalGoal|{Name}|{Description}|{Points}";
+        return $"{Name}: {Description} - Points: {Points}";
     }
 }

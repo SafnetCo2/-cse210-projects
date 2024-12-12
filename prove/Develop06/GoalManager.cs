@@ -4,123 +4,131 @@ using System.IO;
 
 public class GeneralManager
 {
-    private List<Goal> goals = new List<Goal>();
-    private int totalPoints = 0;
     private string playerName;
+    private int totalPoints;
+    private List<Goal> goals;
+    private const string saveFile = "gameSave.txt";
 
-    // Set the player's name
+    public GeneralManager()
+    {
+        goals = new List<Goal>();
+        totalPoints = 0;
+    }
+
     public void SetPlayerName(string name)
     {
         playerName = name;
     }
 
-    // Get the total points
-    public int GetTotalPoints()
+    public int TotalPoints
     {
-        return totalPoints;
+        get { return totalPoints; }
     }
 
-    // Add a goal
-    public void AddGoal()
+    // Load game logic
+    public void LoadGame()
     {
-        Console.WriteLine("Select Goal Type:");
-        Console.WriteLine("1. Simple Goal");
-        Console.WriteLine("2. Eternal Goal");
-        Console.WriteLine("3. Checklist Goal");
-        Console.Write("Enter your choice: ");
-        string choice = Console.ReadLine();
-
-        Goal goal = null;
-
-        switch (choice)
+        if (File.Exists(saveFile))
         {
-            case "1":
-                goal = new SimpleGoal();
-                break;
-            case "2":
-                goal = new EternalGoal();
-                break;
-            case "3":
-                goal = new ChecklistGoal();
-                break;
-            default:
-                Console.WriteLine("Invalid choice.");
-                return;
-        }
+            var lines = File.ReadAllLines(saveFile);
+            playerName = lines[0]; // First line is player name
+            totalPoints = int.Parse(lines[1]); // Second line is total points
 
-        goal.CreateGoal();
-        goals.Add(goal);
-        Console.WriteLine("Goal added successfully!");
-    }
+            Console.WriteLine($"{playerName}, you have {totalPoints} points.");
 
-    // List all goals
-    public void ListGoals()
-    {
-        Console.WriteLine("\nGoals:");
-        foreach (var goal in goals)
-        {
-            Console.WriteLine(goal.GetGoalInfo());
-        }
-    }
-
-    // Record an event for a goal
-    public void RecordEvent()
-    {
-        Console.WriteLine("Select a goal to record:");
-        for (int i = 0; i < goals.Count; i++)
-        {
-            Console.WriteLine($"{i + 1}. {goals[i].GetGoalInfo()}");
-        }
-
-        Console.Write("Enter goal number: ");
-        int goalNumber = int.Parse(Console.ReadLine()) - 1;
-
-        if (goalNumber >= 0 && goalNumber < goals.Count)
-        {
-            totalPoints += goals[goalNumber].RecordEvent();
-            Console.WriteLine($"Event recorded! Total points: {totalPoints}");
+            // Load goals from the save file
+            goals.Clear();
+            for (int i = 2; i < lines.Length; i++)
+            {
+                string[] goalData = lines[i].Split(',');
+                Goal goal = GoalFactory(goalData);
+                if (goal != null)
+                {
+                    goals.Add(goal);
+                }
+            }
+            Console.WriteLine("Game loaded successfully!");
         }
         else
         {
-            Console.WriteLine("Invalid goal number.");
+            Console.WriteLine("No saved game found, starting fresh.");
         }
     }
 
-    // Show player information
-    public void ShowPlayerInfo()
+    // Save game logic
+    public void SaveGame()
     {
-        Console.WriteLine($"Player: {playerName}, Total Points: {totalPoints}");
-    }
-
-    // Save the game to a file
-    public void SaveGame(string filePath)
-    {
-        using (StreamWriter writer = new StreamWriter(filePath))
+        using (StreamWriter writer = new StreamWriter(saveFile))
         {
             writer.WriteLine(playerName);
             writer.WriteLine(totalPoints);
             foreach (var goal in goals)
             {
-                writer.WriteLine(goal.GetGoalSaveInfo());
+                writer.WriteLine(goal.ToSaveFormat());
             }
         }
         Console.WriteLine("Game saved successfully!");
     }
 
-    // Load the game from a file
-    public void LoadGame(string filePath)
+    // Add goal
+    public void AddGoal(Goal goal)
     {
-        using (StreamReader reader = new StreamReader(filePath))
-        {
-            playerName = reader.ReadLine();
-            totalPoints = int.Parse(reader.ReadLine());
+        goals.Add(goal);
+        totalPoints += goal.Points;  // Add the points of the new goal to total points
+    }
 
-            string line;
-            while ((line = reader.ReadLine()) != null)
-            {
-                Goal goal = Goal.LoadGoalFromString(line);
-                goals.Add(goal);
-            }
+    // List goals
+    public void ListGoals()
+    {
+        Console.WriteLine("Goals:");
+        for (int i = 0; i < goals.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {goals[i].GetStringRepresentation()}");
         }
+    }
+
+    // Show player info
+    public void DisplayPlayerInfo()
+    {
+        Console.WriteLine($"{playerName}, you have {totalPoints} points.");
+    }
+
+    // Record event logic (updates total points as needed)
+    public void RecordEvent(int goalIndex)
+    {
+        Goal goal = goals[goalIndex];
+        goal.RecordEvent();
+        totalPoints += goal.Points;  // Update the total points when an event is recorded
+    }
+
+    // Factory method to create goal objects from the save data
+    private Goal GoalFactory(string[] goalData)
+    {
+        string goalType = goalData[0];
+        string name = goalData[1];
+        string description = goalData[2];
+        int points = int.Parse(goalData[3]);
+
+        if (goalType == "SimpleGoal")
+        {
+            return new SimpleGoal(name, description, points);
+        }
+        else if (goalType == "ChecklistGoal")
+        {
+            int targetCount = int.Parse(goalData[4]);
+            int bonusPoints = int.Parse(goalData[5]);
+            int currentCount = int.Parse(goalData[6]);
+            var goal = new ChecklistGoal(name, description, points, targetCount, bonusPoints)
+            {
+                CurrentCount = currentCount
+            };
+            return goal;
+        }
+        else if (goalType == "EternalGoal")
+        {
+            return new EternalGoal(name, description, points);
+        }
+
+        return null;
     }
 }
