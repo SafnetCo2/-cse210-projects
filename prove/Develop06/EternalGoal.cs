@@ -1,22 +1,39 @@
-using System.Security.Cryptography.X509Certificates;
+using System;
 
-public class EternalGoal:Goal{
-    private int _pointsPerEvent;
-    public EternalGoal(string name,string description,int pointsPerEvent):base(name,description)
-    {
-        _pointsPerEvent = pointsPerEvent;
+public class EternalGoal : Goal
+{
+    public EternalGoal() { }
 
-    }
-    public override void RecordEvent()
+    public EternalGoal(string name, string description, int points)
     {
-        AddPoints(_pointsPerEvent);
-        _progress++;
-    }
-    public override void DisplayProgress()
-    {
-        Console.WriteLine($"{Name}:[EternalGoal](Progress:{Progress}events, Points:{Points})");
+        Name = name;
+        Description = description;
+        Points = points;
     }
 
-            public override void MarkComplete()
-        {}
+    public override void CreateGoal()
+    {
+        Console.Write("Enter goal name: ");
+        Name = Console.ReadLine();
+        Console.Write("Enter goal description: ");
+        Description = Console.ReadLine();
+        Console.Write("Enter goal points: ");
+        Points = int.Parse(Console.ReadLine());
+    }
+
+    public override int RecordEvent()
+    {
+        Console.WriteLine($"Goal '{Name}' completed! You earned {Points} points.");
+        return Points;
+    }
+
+    public override string GetGoalInfo()
+    {
+        return $"[ ] {Name}: {Description} - Points: {Points}";
+    }
+
+    public override string GetGoalSaveInfo()
+    {
+        return $"EternalGoal|{Name}|{Description}|{Points}";
+    }
 }

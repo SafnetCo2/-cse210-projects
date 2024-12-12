@@ -1,33 +1,32 @@
 using System;
+
 public abstract class Goal
 {
-    //private member variables
-    private string =_name;
-    private string=_description;
-    private int=_points;
-    private int=_progress;
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public int Points { get; set; }
 
-    //intialize name and description
-    public Goal(string name, string description)
-    {
-        _name = name;
-        _description = description;
-        _points = 0;
-        _progress = 0;
+    public abstract void CreateGoal();
+    public abstract int RecordEvent();
+    public abstract string GetGoalInfo();
+    public abstract string GetGoalSaveInfo();
 
-    }
-    //public properties to get information
-    public string Name = _name;
-    public string Description = _description;
-    public string Points = _points;
-    public string Progress = _progress;
-    //abstract method to be implemented by derived class
-    public abstract void RecordEvent();
-    public abstract void DisplayProgress();
-    public abstract void MarkComplete();
-    //method to accumulate points
-    protected void AddPoints(int points)
+    public static Goal LoadGoalFromString(string goalData)
     {
-        _points += points;
+        // Parse and create goal object based on saved data
+        string[] parts = goalData.Split('|');
+        if (parts[0] == "SimpleGoal")
+        {
+            return new SimpleGoal(parts[1], parts[2], int.Parse(parts[3]));
+        }
+        else if (parts[0] == "EternalGoal")
+        {
+            return new EternalGoal(parts[1], parts[2], int.Parse(parts[3]));
+        }
+        else if (parts[0] == "ChecklistGoal")
+        {
+            return new ChecklistGoal(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), int.Parse(parts[5]));
+        }
+        return null;
     }
 }
