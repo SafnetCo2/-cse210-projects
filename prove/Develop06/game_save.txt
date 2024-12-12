@@ -1,2 +1,55 @@
-Jose
-0
+Jose|0
+SimpleGoal|cook|rice and beans|30
+END
+Jose|0
+SimpleGoal|cook|rice and beans|30
+ChecklistGoal|clean house|monday and friday|50|3|0|4
+END
+Jose|0
+SimpleGoal|cook|rice and beans|30
+ChecklistGoal|clean house|monday and friday|50|3|0|4
+EternalGoal|Pray|400|30
+END
+Jose|0
+SimpleGoal|cook|rice and beans|30
+ChecklistGoal|clean house|monday and friday|50|3|0|4
+EternalGoal|Pray|400|30
+SimpleGoal|Hike|mt Elgone|200
+END
+Jose|0
+SimpleGoal|cook|rice and beans|30
+ChecklistGoal|clean house|monday and friday|50|3|0|4
+EternalGoal|Pray|400|30
+SimpleGoal|Hike|mt Elgone|200
+ChecklistGoal|visit friend|monday|4|3|0|2
+END
+Jose|0
+SimpleGoal|cook|rice and beans|30
+ChecklistGoal|clean house|monday and friday|50|3|0|4
+EternalGoal|Pray|400|30
+SimpleGoal|Hike|mt Elgone|200
+ChecklistGoal|visit friend|monday|4|3|0|2
+EternalGoal|attend Temple|on tuesday|200
+END
+JOHN|0
+SimpleGoal|COOK|ugali|300
+END
+JOhn|0
+SimpleGoal|cook|rice|10
+END
+JOhn|0
+SimpleGoal|cook|rice|10
+SimpleGoal|Hikke|mt elgon|30
+END
+jo|0
+SimpleGoal|cook|monday|400
+END
+Tim|0
+SimpleGoal|cook|mon|400
+END
+Jo|0
+SimpleGoal|cook|rice|200
+END
+jo|0
+SimpleGoal|go to market|to buy vegies|300
+END

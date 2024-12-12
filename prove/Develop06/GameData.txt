@@ -1,5 +1,0 @@
-Josephine
-0
-SimpleGoal|Run a Marathon|finish 2 race|100
-EternalGoal|Pray|always|600
-ChecklistGoal|cook|rice and beans|30|3|4

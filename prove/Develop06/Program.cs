@@ -1,120 +1,86 @@
-using System;
-
 public class Program
 {
-    public static void Main()
+    static void Main(string[] args)
     {
-        GeneralManager manager = new GeneralManager();
-
         Console.WriteLine("Welcome to the Eternal Quest Program!");
         Console.Write("Enter your name: ");
-        string playerName = Console.ReadLine();
+        string userName = Console.ReadLine();
+        GoalManager goalManager = new GoalManager();
+        goalManager.LoadGame(userName);
 
-        manager.SetPlayerName(playerName);
-        manager.LoadGame();  // Loads the previous game state
+        bool exit = false;
 
-        bool isRunning = true;
-
-        // Display points if user has played before
-        Console.WriteLine($"{playerName}, you have {manager.TotalPoints} points.");
-
-        while (isRunning)
+        while (!exit)
         {
-            Console.WriteLine("\nMenu:");
-            Console.WriteLine("1. Add Goal");
-            Console.WriteLine("2. List Goals");
-            Console.WriteLine("3. Record Event");
-            Console.WriteLine("4. Show Player Info");
-            Console.WriteLine("5. Save Game");
-            Console.WriteLine("6. Exit");
+            Console.WriteLine($"\nWelcome back, {userName}!");
+            Console.WriteLine($"You have {goalManager.TotalPoints} points.");
+            Console.WriteLine("Select an option:");
+            Console.WriteLine("1. Create a New Goal");
+            Console.WriteLine("2. View Goals");
+            Console.WriteLine("3. Record an Event");
+            Console.WriteLine("4. Save Game");
+            Console.WriteLine("5. Exit");
 
-            Console.Write("Select an option: ");
-            string choice = Console.ReadLine();
+            string input = Console.ReadLine();
 
-            switch (choice)
+            switch (input)
             {
                 case "1":
-                    // Add goal logic
-                    Console.WriteLine("Select Goal Type:");
+                    Console.WriteLine("Select goal type:");
                     Console.WriteLine("1. Simple Goal");
                     Console.WriteLine("2. Checklist Goal");
                     Console.WriteLine("3. Eternal Goal");
-                    string goalType = Console.ReadLine();
-                    Goal newGoal = null;
 
-                    if (goalType == "1")
+                    string goalTypeInput = Console.ReadLine();
+
+                    Console.Write("Enter goal name: ");
+                    string goalName = Console.ReadLine();
+                    Console.Write("Enter goal description: ");
+                    string goalDescription = Console.ReadLine();
+                    Console.Write("Enter goal points: ");
+                    int goalPoints = int.Parse(Console.ReadLine());
+
+                    Goal goal = null;
+
+                    switch (goalTypeInput)
                     {
-                        Console.Write("Enter goal name: ");
-                        string name = Console.ReadLine();
-                        Console.Write("Enter goal description: ");
-                        string description = Console.ReadLine();
-                        Console.Write("Enter goal points: ");
-                        int points = int.Parse(Console.ReadLine());
-
-                        newGoal = new SimpleGoal(name, description, points);
-                    }
-                    else if (goalType == "2")
-                    {
-                        Console.Write("Enter goal name: ");
-                        string name = Console.ReadLine();
-                        Console.Write("Enter goal description: ");
-                        string description = Console.ReadLine();
-                        Console.Write("Enter goal points: ");
-                        int points = int.Parse(Console.ReadLine());
-                        Console.Write("Enter target count: ");
-                        int targetCount = int.Parse(Console.ReadLine());
-                        Console.Write("Enter bonus points: ");
-                        int bonusPoints = int.Parse(Console.ReadLine());
-
-                        newGoal = new ChecklistGoal(name, description, points, targetCount, bonusPoints);
-                    }
-                    else if (goalType == "3")
-                    {
-                        Console.Write("Enter goal name: ");
-                        string name = Console.ReadLine();
-                        Console.Write("Enter goal description: ");
-                        string description = Console.ReadLine();
-                        Console.Write("Enter goal points: ");
-                        int points = int.Parse(Console.ReadLine());
-
-                        newGoal = new EternalGoal(name, description, points);
+                        case "1":
+                            goal = new SimpleGoal(goalName, goalDescription, goalPoints);
+                            break;
+                        case "2":
+                            goal = new ChecklistGoal(goalName, goalDescription, goalPoints, 3, 50);
+                            break;
+                        case "3":
+                            goal = new EternalGoal(goalName, goalDescription, goalPoints);
+                            break;
                     }
 
-                    if (newGoal != null)
+                    if (goal != null)
                     {
-                        manager.AddGoal(newGoal);
+                        goalManager.AddGoal(goal);
+                        Console.WriteLine($"Goal '{goalName}' added successfully.");
                     }
-
                     break;
-
                 case "2":
-                    manager.ListGoals();
+                    goalManager.ListGoals();
                     break;
-
                 case "3":
-                    Console.Write("Enter goal number to record: ");
+                    Console.WriteLine("Enter goal number to record event: ");
                     int goalIndex = int.Parse(Console.ReadLine()) - 1;
-                    manager.RecordEvent(goalIndex);
+                    goalManager.RecordEvent(goalIndex);
                     break;
-
                 case "4":
-                    manager.DisplayPlayerInfo();
+                    goalManager.SaveGame(userName);
+                    Console.WriteLine("Game saved.");
                     break;
-
                 case "5":
-                    manager.SaveGame();
+                    Console.WriteLine("Goodbye!");
+                    exit = true;
                     break;
-
-                case "6":
-                    isRunning = false;
-                    break;
-
                 default:
-                    Console.WriteLine("Invalid choice.");
+                    Console.WriteLine("Invalid option, please try again.");
                     break;
             }
         }
-
-        Console.WriteLine("Game Over. Thank you for playing!");
     }
 }
