@@ -20,8 +20,7 @@ public class GoalManager
         if (goalIndex >= 0 && goalIndex < Goals.Count)
         {
             Goals[goalIndex].RecordEvent();
-            UpdateTotalPoints(); // Ensure total points are updated after event is recorded
-        }
+            UpdateTotalPoints();         }
         else
         {
             Console.WriteLine("Invalid goal index.");
@@ -147,7 +146,7 @@ public class GoalManager
         TotalPoints = 0;
         foreach (var goal in Goals)
         {
-            if (goal.IsCompleted) // Add points only for completed goals
+            if (goal.IsCompleted) // Adds points only for completed goals
             {
                 TotalPoints += goal.Points;
             }
