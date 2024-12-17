@@ -12,55 +12,13 @@ namespace ExerciseTracking
         {
             Console.WriteLine("Welcome to the Exercise Tracking App!\n");
 
+            // Create a list of activities
             List<Activity> activities = new List<Activity>();
-            bool keepRunning = true;
 
-            while (keepRunning)
-            {
-                Console.WriteLine("Choose activity type: 1: Running | 2: Cycling | 3: Swimming | 0: Exit");
-                string choice = Console.ReadLine();
-
-                if (choice == "0")
-                {
-                    keepRunning = false;
-                    break;
-                }
-
-                Console.Write("Enter the date (yyyy-mm-dd): ");
-                DateTime date = DateTime.Parse(Console.ReadLine());
-
-                Console.Write("Enter duration in minutes: ");
-                int minutes = int.Parse(Console.ReadLine());
-
-                Activity activity = null;
-
-                switch (choice)
-                {
-                    case "1": // Running
-                        Console.Write("Enter distance (km): ");
-                        double distance = double.Parse(Console.ReadLine());
-                        activity = new Running(date, minutes, distance);
-                        break;
-
-                    case "2": // Cycling
-                        Console.Write("Enter speed (kph): ");
-                        double speed = double.Parse(Console.ReadLine());
-                        activity = new Cycling(date, minutes, speed);
-                        break;
-
-                    case "3": // Swimming
-                        Console.Write("Enter number of laps: ");
-                        int laps = int.Parse(Console.ReadLine());
-                        activity = new Swimming(date, minutes, laps);
-                        break;
-
-                    default:
-                        Console.WriteLine("Invalid choice. Please choose again.");
-                        continue;
-                }
-
-                activities.Add(activity);
-            }
+            // Predefined activities
+            activities.Add(new Running(DateTime.Parse("2024-12-01"), 30, 10));  // 10 km running for 30 minutes
+            activities.Add(new Cycling(DateTime.Parse("2024-12-02"), 45, 20)); // 20 kph cycling for 45 minutes
+            activities.Add(new Swimming(DateTime.Parse("2024-12-03"), 30, 20)); // 20 laps swimming for 30 minutes
 
             // Display summaries
             Console.WriteLine("\nActivity Summaries:");

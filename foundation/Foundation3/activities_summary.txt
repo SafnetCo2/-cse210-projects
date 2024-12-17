@@ -1,1 +1,3 @@
-02 Aug 2024 Running (1000 min) - Distance: 50 km, Speed: 3 kph, Pace: 20 min per km
+01 Dec 2024 Running (30 min) - Distance: 10 km, Speed: 20 kph, Pace: 3 min per km
+02 Dec 2024 Cycling (45 min) - Distance: 15 km, Speed: 20 kph, Pace: 3 min per km
+03 Dec 2024 Swimming (30 min) - Distance: 1 km, Speed: 2 kph, Pace: 30 min per km
